@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider-Image</title>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- My Swiper on https://swiperjs.com/get-started in CDN-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"><img src="img/aston-martin.jpg" alt="" /></div>
+          <div class="swiper-slide"><img src="img/audi-rs-e-tron-gt.jpg" alt="" /></div>
+          <div class="swiper-slide"><img src="img/maserati-mc20.jpg" alt="" /></div>
+          <div class="swiper-slide"><img src="img/nio-et5.jpg" alt="" /></div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <!-- <div class="swiper-scrollbar"></div> -->
+        <!-- Bagian ini dihapus karena kita tidak Memerlukan Scroll Bar -->
+      </div>
+    </div>
+
+    <!-- JS Swiper On https://swiperjs.com/get-started in CDN -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+    <script>
+      const swiper = new Swiper(".swiper", {
+        // Optional parameters
+        // direction: 'vertical', /* Ini harus dihapus */
+        /* Membuat gambar berpindah sendiri selama waktu yang ditentukan delay. */
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true /* Untuk bisa mengeklik lingkaran dibawah gambar */,
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        // And if we need scrollbar /* Bagian ini dihapus karena kita tidak memerlukan Scroll bar */
+        // scrollbar: {
+        //   el: ".swiper-scrollbar",
+        // },
+      });
+    </script>
+  </body>
+</html>
